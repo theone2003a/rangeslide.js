@@ -473,7 +473,6 @@ Rangeslide.prototype = {
         this.fire("thumbDragStart", [thumb.getValue(), event.currentTarget]);
         window.addEventListener("mousemove", this.__onThumbMouseMove);
         window.addEventListener("mouseup", this.__onThumbMouseUp);
-        window.addEventListener("mousemove", this.__onThumbMouseMove);
         window.addEventListener("touchend", this.__onThumbMouseUp);
         window.addEventListener("touchcancel", this.__onThumbMouseUp);
         window.addEventListener("touchmove", this.__onThumbMouseMove);
