@@ -473,6 +473,10 @@ Rangeslide.prototype = {
         this.fire("thumbDragStart", [thumb.getValue(), event.currentTarget]);
         window.addEventListener("mousemove", this.__onThumbMouseMove);
         window.addEventListener("mouseup", this.__onThumbMouseUp);
+        window.addEventListener("mousemove", this.__onThumbMouseMove);
+        window.addEventListener("touchend", this.__onThumbMouseUp);
+        window.addEventListener("touchcancel", this.__onThumbMouseUp);
+        window.addEventListener("touchmove", this.__onThumbMouseMove);
     },
 
     __onThumbMouseUp: function(event) {
@@ -484,6 +488,9 @@ Rangeslide.prototype = {
         thumb.getElement().classList.add("animated");
         window.removeEventListener("mousemove", this.__onThumbMouseMove);
         window.removeEventListener("mouseup", this.__onThumbMouseUp);
+        window.removeEventListener("touchend", this.__onThumbMouseUp);
+        window.removeEventListener("touchcancel", this.__onThumbMouseUp);
+        window.removeEventListener("touchmove", this.__onThumbMouseMove);
     },
 
     __onThumbMouseMove: function(event) {
